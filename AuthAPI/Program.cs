@@ -18,14 +18,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
+// SETTING THE CONNECTION STRING TO MY DBCONTEXT
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// CONFIGURING CORS, SO OUR API CAN BE REQUESTED BY SOME FRONT END DEVELOPER
 builder.Services.AddCors(p => p.AddPolicy("CorsAlten", builder =>
 {
     builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
 }));
 
+// CONFIGURING THE SWAGGER UI SO IT CAN RECEIVE THE AUTHENTICATION JWT TOKEN
 builder.Services.AddSwaggerGen(options =>
 {
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -53,6 +56,7 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+// SETTING THE AUTHENTICATION WITH JWT TOKEN
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters()
@@ -66,17 +70,15 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
     };
 });
+
 builder.Services.AddAuthorization();
-
 builder.Services.AddSingleton<BookingUpdater>();
-
 builder.Services.AddScoped<IUserApplication, UserApplication>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IBookingApplication, BookingApplication>();
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<ILoginService, LoginService>();
-
 IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
 builder.Services.AddSingleton(mapper);
 
@@ -88,5 +90,4 @@ app.UseSwaggerUI();
 app.UseCors("CorsAlten");
 app.UseHttpsRedirection();
 app.MapControllers();
-
 app.Run();
