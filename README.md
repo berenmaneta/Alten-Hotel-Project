@@ -1,5 +1,4 @@
 # Alten Hotel Project
- Alten Hotel Project
 
 Hello! Welcome to my Alten Hotel Project!
 
