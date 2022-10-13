@@ -82,7 +82,7 @@ namespace AltenAPI.Controllers
         }
 
         [HttpGet("availability")]
-        public async Task<IResult> GetAvailability([FromQuery] BookingDto booking)
+        public async Task<IResult> GetAvailability(BookingDto booking)
         {
             var available = await bookingApplication.GetAvailability(booking);
             if(available)

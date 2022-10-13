@@ -1,0 +1,406 @@
+{
+	"info": {
+		"_postman_id": "3d95e944-6816-4d52-ab6c-db8bbd368b13",
+		"name": "Local queries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user/login : get Jwt Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{},
+					{}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"batman\",\r\n    \"password\" : \"batman\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7224/User/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7224",
+					"path": [
+						"User",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "booking/availability : check if room is available",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"beginDate\" : \"2022-10-23\",\r\n    \"endDate\" : \"2022-10-26\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7224/Booking/availability",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7224",
+					"path": [
+						"Booking",
+						"availability"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "booking/list : get list of users bookings",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImJhdG1hbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImJhdG1hbkBnb3RoYW4uY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZ2l2ZW5uYW1lIjoiQnJ1Y2UiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdXJuYW1lIjoiV2F5bmUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsIlVzZXJJRCI6IjEiLCJuYmYiOjE2NjU2NjQxMzAsImV4cCI6MTY3MDg0ODEzMCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIyNC8iLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo3MjI0LyJ9.zi-DfYKslf-21PZ-wgeoEqcfiyiBDbbxWC85ajYuhgs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7224/booking/list",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7224",
+					"path": [
+						"booking",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "booking/listAll : get list of all bookings",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImJhdG1hbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImJhdG1hbkBnb3RoYW4uY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZ2l2ZW5uYW1lIjoiQnJ1Y2UiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdXJuYW1lIjoiV2F5bmUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsIlVzZXJJRCI6IjEiLCJuYmYiOjE2NjU2NjQxMzAsImV4cCI6MTY3MDg0ODEzMCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIyNC8iLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo3MjI0LyJ9.zi-DfYKslf-21PZ-wgeoEqcfiyiBDbbxWC85ajYuhgs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7224/booking/listAll",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7224",
+					"path": [
+						"booking",
+						"listAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "booking/get : get users booking",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImJhdG1hbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImJhdG1hbkBnb3RoYW4uY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZ2l2ZW5uYW1lIjoiQnJ1Y2UiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdXJuYW1lIjoiV2F5bmUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsIlVzZXJJRCI6IjEiLCJuYmYiOjE2NjU2NjQxMzAsImV4cCI6MTY3MDg0ODEzMCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIyNC8iLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo3MjI0LyJ9.zi-DfYKslf-21PZ-wgeoEqcfiyiBDbbxWC85ajYuhgs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "967D0499-E16B-4998-9788-38C26B0B0128",
+							"type": "default"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7224/Booking/get?id=967D0499-E16B-4998-9788-38C26B0B0128",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7224",
+					"path": [
+						"Booking",
+						"get"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "967D0499-E16B-4998-9788-38C26B0B0128"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "booking/create : create new booking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImJhdG1hbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImJhdG1hbkBnb3RoYW4uY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZ2l2ZW5uYW1lIjoiQnJ1Y2UiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdXJuYW1lIjoiV2F5bmUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsIlVzZXJJRCI6IjEiLCJuYmYiOjE2NjU2NjQxMzAsImV4cCI6MTY3MDg0ODEzMCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIyNC8iLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo3MjI0LyJ9.zi-DfYKslf-21PZ-wgeoEqcfiyiBDbbxWC85ajYuhgs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"beginDate\": \"2022-10-23\",\r\n  \"endDate\": \"2022-10-26\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7224/Booking/create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7224",
+					"path": [
+						"Booking",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "booking/update : update users booking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImJhdG1hbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImJhdG1hbkBnb3RoYW4uY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZ2l2ZW5uYW1lIjoiQnJ1Y2UiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdXJuYW1lIjoiV2F5bmUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsIlVzZXJJRCI6IjEiLCJuYmYiOjE2NjU2NjQxMzAsImV4cCI6MTY3MDg0ODEzMCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIyNC8iLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo3MjI0LyJ9.zi-DfYKslf-21PZ-wgeoEqcfiyiBDbbxWC85ajYuhgs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookingNumber\": \"EC64F3C3-3961-4E65-B2FC-08DAAD178819\",\r\n  \"beginDate\": \"2022-10-27\",\r\n  \"endDate\": \"2022-10-30\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7224/Booking/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7224",
+					"path": [
+						"Booking",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "booking/cancel : cancel users booking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImJhdG1hbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImJhdG1hbkBnb3RoYW4uY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZ2l2ZW5uYW1lIjoiQnJ1Y2UiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdXJuYW1lIjoiV2F5bmUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsIlVzZXJJRCI6IjEiLCJuYmYiOjE2NjU2NjQxMzAsImV4cCI6MTY3MDg0ODEzMCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIyNC8iLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo3MjI0LyJ9.zi-DfYKslf-21PZ-wgeoEqcfiyiBDbbxWC85ajYuhgs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "EC64F3C3-3961-4E65-B2FC-08DAAD178819",
+							"type": "default"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7224/Booking/cancel?id=EC64F3C3-3961-4E65-B2FC-08DAAD178819",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7224",
+					"path": [
+						"Booking",
+						"cancel"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "EC64F3C3-3961-4E65-B2FC-08DAAD178819"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "booking/delete : delete users booking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImJhdG1hbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImJhdG1hbkBnb3RoYW4uY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZ2l2ZW5uYW1lIjoiQnJ1Y2UiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdXJuYW1lIjoiV2F5bmUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsIlVzZXJJRCI6IjEiLCJuYmYiOjE2NjU2NjQxMzAsImV4cCI6MTY3MDg0ODEzMCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIyNC8iLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo3MjI0LyJ9.zi-DfYKslf-21PZ-wgeoEqcfiyiBDbbxWC85ajYuhgs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "EC64F3C3-3961-4E65-B2FC-08DAAD178819",
+							"type": "default"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7224/Booking/delete?id=EC64F3C3-3961-4E65-B2FC-08DAAD178819",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7224",
+					"path": [
+						"Booking",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "EC64F3C3-3961-4E65-B2FC-08DAAD178819"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user/create : create new user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImJhdG1hbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImJhdG1hbkBnb3RoYW4uY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZ2l2ZW5uYW1lIjoiQnJ1Y2UiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdXJuYW1lIjoiV2F5bmUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsIlVzZXJJRCI6IjEiLCJuYmYiOjE2NjU2NjQxMzAsImV4cCI6MTY3MDg0ODEzMCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIyNC8iLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo3MjI0LyJ9.zi-DfYKslf-21PZ-wgeoEqcfiyiBDbbxWC85ajYuhgs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"robin\",\r\n  \"emailAddress\": \"robin@gothan.com\",\r\n  \"password\": \"robin\",\r\n  \"givenName\": \"robin\",\r\n  \"surname\": \"robin\",\r\n  \"role\": \"client\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7224/user/create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7224",
+					"path": [
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
