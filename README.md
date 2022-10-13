@@ -27,6 +27,7 @@ But, if you want to book a day, well, you will need to register.
 The first user that i populate in the database has an "admin" role. This role allows the user to do some things that a "client" user can not (those are the 2 role profiles that i thought about for this solution).
 
 So, to register a new user, you will need to use the admin user.
+(UPDATE: I CHANGED THIS FEATURE AND NOW IT IS POSSIBLE TO CREATE A NEW USER WITHOUT AUTHENTICATION)
 
 The username is: 'batman'
 The password is: 'batman'
