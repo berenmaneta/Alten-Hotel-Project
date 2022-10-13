@@ -48,5 +48,5 @@ I hope you like it. I look forward on discussing this with you guys.
 
 See you!
 
-P.S: i left a json file with local queries to test the api on postman...
+P.S: i left a json file (Local queries.postman_collection.json) with local queries to test the api on postman...
 
