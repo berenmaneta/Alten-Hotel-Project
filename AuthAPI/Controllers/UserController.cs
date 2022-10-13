@@ -42,7 +42,6 @@ namespace AltenAPI.Controllers
             return Results.BadRequest("Invalid user credentials");
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "admin")]
         [HttpPost("create")]
         public IResult Login(UserDto dto)
         {
