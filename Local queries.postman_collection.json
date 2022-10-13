@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "3d95e944-6816-4d52-ab6c-db8bbd368b13",
-		"name": "Local queries",
+		"_postman_id": "feb9f6eb-a99c-4660-93f5-9459eaca7dd3",
+		"name": "Local queries Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -367,14 +367,7 @@
 			"name": "user/create : create new user",
 			"request": {
 				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImJhdG1hbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImJhdG1hbkBnb3RoYW4uY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZ2l2ZW5uYW1lIjoiQnJ1Y2UiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdXJuYW1lIjoiV2F5bmUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsIlVzZXJJRCI6IjEiLCJuYmYiOjE2NjU2NjQxMzAsImV4cCI6MTY3MDg0ODEzMCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzIyNC8iLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo3MjI0LyJ9.zi-DfYKslf-21PZ-wgeoEqcfiyiBDbbxWC85ajYuhgs",
-							"type": "string"
-						}
-					]
+					"type": "noauth"
 				},
 				"method": "POST",
 				"header": [],
